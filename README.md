@@ -7,15 +7,21 @@ A geolocation weather app upgraded into a full MERN-style project: **React (Vite
 ## Features
 
 - Auto-detects your location on load
-![Home screen](screenshots/home.png)
 - Search any city with live autocomplete
+
+![Home screen](screenshots/home.png)
+
 - Current conditions: temperature, feels-like, humidity, pressure, wind, visibility
 - Real last-7-days temperature history chart
+
 ![7-day history chart](screenshots/history.png)
+
 - Severe weather alerts (storms, heavy rain/snow)
 - User accounts with login, signup, and password reset
-![Login](screenshots/login.png)
 - Save favorite cities and view recent search history 
+
+![Login](screenshots/login.png)
+
 
 
 ## Project structure

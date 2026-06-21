@@ -4,20 +4,19 @@ A geolocation weather app upgraded into a full MERN-style project: **React (Vite
 
 🔗 **Live demo:** [https://weather-jfhhrmqdj-ykhushi67s-projects.vercel.app/](https://weather-jfhhrmqdj-ykhushi67s-projects.vercel.app/)
 
-## Screenshots
-
-![Home screen](screenshots/home.png)
-![7-day history chart](screenshots/history.png)
-![Login](screenshots/login.png)
-
 ## Features
+
 - Auto-detects your location on load
+![Home screen](screenshots/home.png)
 - Search any city with live autocomplete
 - Current conditions: temperature, feels-like, humidity, pressure, wind, visibility
 - Real last-7-days temperature history chart
+![7-day history chart](screenshots/history.png)
 - Severe weather alerts (storms, heavy rain/snow)
 - User accounts with login, signup, and password reset
-- Save favorite cities and view recent search history
+![Login](screenshots/login.png)
+- Save favorite cities and view recent search history 
+
 
 ## Project structure
 ```

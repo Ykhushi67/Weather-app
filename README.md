@@ -1,16 +1,27 @@
 # Skyline — Full-Stack Weather App
 
-A geolocation weather app upgraded into a full MERN-style project:
-**React (Vite) + Node/Express + MongoDB**, using **Open-Meteo** (free, no API key needed) for live weather, geocoding, and real 7-day history.
+A geolocation weather app upgraded into a full MERN-style project: **React (Vite) + Node/Express + MongoDB**.
+
+🔗 **Live demo:** [https://weather-jfhhrmqdj-ykhushi67s-projects.vercel.app/](https://weather-jfhhrmqdj-ykhushi67s-projects.vercel.app/)
+
+## Screenshots
+
+> Add your screenshots here — drop image files into a `screenshots/` folder in this repo, then reference them like below:
+
+```md
+![Home screen](screenshots/home.png)
+![7-day history chart](screenshots/history.png)
+![Login](screenshots/login.png)
+```
 
 ## Features
-- Auto-detects your location on load, just like the original app
-- Search any city (autocomplete via Open-Meteo geocoding)
-- Current temperature, feels-like, humidity, pressure, wind, visibility
-- Real **last 7 days** temperature chart (Open-Meteo Archive API)
-- User signup/login (JWT)
-- Save favorite cities (MongoDB)
-- Search history saved per logged-in user (MongoDB)
+- Auto-detects your location on load
+- Search any city with live autocomplete
+- Current conditions: temperature, feels-like, humidity, pressure, wind, visibility
+- Real last-7-days temperature history chart
+- Severe weather alerts (storms, heavy rain/snow)
+- User accounts with login, signup, and password reset
+- Save favorite cities and view recent search history
 
 ## Project structure
 ```
@@ -19,45 +30,11 @@ weather-app/
   frontend/    -> React (Vite) app
 ```
 
-## 1. Backend setup
+## Tech details
 
-```bash
-cd backend
-npm install
-cp .env.example .env
-```
+**Weather data** comes from [Open-Meteo](https://open-meteo.com/) — no API key required. Current conditions and the 7-day chart both come from genuine historical records via Open-Meteo's Archive API, not estimated or cached data.
 
-Edit `.env`:
-- `MONGO_URI` — your MongoDB Atlas connection string (or local `mongodb://localhost:27017/weather-app`)
-- `JWT_SECRET` — any long random string
-- `CLIENT_URL` — your frontend URL (`http://localhost:5173` for local dev)
-
-Run it:
-```bash
-npm run dev
-```
-Server starts on `http://localhost:5000`.
-
-## 2. Frontend setup
-
-```bash
-cd frontend
-npm install
-cp .env.example .env
-```
-
-`.env` already points to `http://localhost:5000/api` for local dev — change `VITE_API_URL` when you deploy the backend.
-
-Run it:
-```bash
-npm run dev
-```
-App opens on `http://localhost:5173`.
-
-## 3. Deploying
-
-- **Backend**: Render, Railway, or Fly.io work well for a free Express + MongoDB API. Set the same env vars there, and use a MongoDB Atlas free-tier cluster (don't use `localhost` in production).
-- **Frontend**: keep using Vercel like before — just set `VITE_API_URL` to your deployed backend's URL in Vercel's project environment variables.
+**MongoDB** stores user accounts, saved favorite cities, and each logged-in user's search history.
 
 ## API overview
 
@@ -66,6 +43,8 @@ App opens on `http://localhost:5173`.
 | POST   | /api/auth/signup           | No             | Create account                   |
 | POST   | /api/auth/login            | No             | Log in                           |
 | GET    | /api/auth/me               | Yes            | Get current user                 |
+| POST   | /api/auth/forgot-password  | No             | Request password reset           |
+| POST   | /api/auth/reset-password   | No             | Set new password                 |
 | GET    | /api/weather/geocode       | No             | City name -> coordinates         |
 | GET    | /api/weather/current       | Optional       | Current weather (logs history if logged in) |
 | GET    | /api/weather/history       | No             | Last 7 days of weather           |
@@ -73,6 +52,3 @@ App opens on `http://localhost:5173`.
 | POST   | /api/favorites             | Yes            | Save a city                      |
 | DELETE | /api/favorites/:id         | Yes            | Remove a saved city               |
 | GET    | /api/favorites/history     | Yes            | Recent searches                  |
-
-## Why Open-Meteo?
-No signup, no API key, no rate-limit headaches while you're learning — and it has a genuine historical archive endpoint, which most free weather APIs don't offer. If you outgrow it later, swapping in OpenWeatherMap only means changing `weatherController.js`.

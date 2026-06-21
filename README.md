@@ -6,13 +6,9 @@ A geolocation weather app upgraded into a full MERN-style project: **React (Vite
 
 ## Screenshots
 
-> Add your screenshots here — drop image files into a `screenshots/` folder in this repo, then reference them like below:
-
-```md
 ![Home screen](screenshots/home.png)
 ![7-day history chart](screenshots/history.png)
 ![Login](screenshots/login.png)
-```
 
 ## Features
 - Auto-detects your location on load

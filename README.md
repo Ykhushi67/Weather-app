@@ -2,7 +2,7 @@
 
 A geolocation weather app upgraded into a full MERN-style project: **React (Vite) + Node/Express + MongoDB**.
 
-🔗 **Live demo:** [https://weather-jfhhrmqdj-ykhushi67s-projects.vercel.app/](https://weather-jfhhrmqdj-ykhushi67s-projects.vercel.app/)
+🔗 **Live demo:** [weather-app-ykhushi67s-projects.vercel.app](weather-app-ykhushi67s-projects.vercel.app)
 
 ## Features
 

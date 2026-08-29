@@ -20,7 +20,7 @@
 ##  Table of Contents
 
 - [ Key Features](#-key-features)
-- [📸 Screenshots & Feature Previews](#-screenshots--feature-previews)
+- [ Screenshots & Feature Previews](#-screenshots--feature-previews)
 - [ System Architecture](#-system-architecture)
 - [ Tech Stack](#-tech-stack)
 - [ Environment Variables](#-environment-variables)
@@ -75,14 +75,10 @@
 
 ###  Live Weather Dashboard & AQI Analytics
 <img src="./screenshots/Screenshot 2026-08-29 163643.png" alt="Live Weather Dashboard" width="92%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
-
 <br/><br/>
-
 ### Interactive Weather Map
 <img src="./screenshots/Screenshot 2026-08-29 164030.png" alt="Interactive Weather Map" width="92%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
-
 <br/><br/>
-
 ### 3.  Side-by-Side City Comparison
 <img src="./screenshots/Screenshot 2026-08-29 163836.png" alt="Side-by-Side City Comparison" width="92%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
 

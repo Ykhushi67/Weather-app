@@ -47,7 +47,7 @@
 - Individual pollutant breakdowns: $\text{PM}_{2.5}$, $\text{PM}_{10}$, $\text{NO}_2$, $\text{O}_3$, $\text{SO}_2$, and $\text{CO}$.
 - **UV Index Meter** with peak hours advisory and protective health guidance.
 
-### 🗺 6. Interactive Weather Map
+###  6. Interactive Weather Map
 - Powered by **Leaflet & React-Leaflet** featuring **Esri Dark Canvas**, **Esri Satellite**, and **OpenStreetMap** layers (100% free, no API key required).
 - **Click-to-Weather**: Click anywhere on the globe to reverse-geocode coordinates and inspect live weather instantly.
 

@@ -1,10 +1,10 @@
 <div align="center">
 
-  <h1>⛅ Skyline</h1>
+  <h1>⛅ Skyline Weather</h1>
   <h3>Full-Stack Weather & Environmental Intelligence Platform</h3>
 
   <p>
-    An interactive, real-time weather analytics application featuring live forecasts, air quality indices, interactive maps, city comparisons, and user search history.
+    An interactive weather analytics application featuring live forecasts, air quality indices, interactive maps, city comparisons, and user search history.
   </p>
 
   <p>
@@ -13,15 +13,6 @@
     <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
     <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Framework-Express_4-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js"></a>
     <a href="https://www.mongodb.com/atlas"><img src="https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"></a>
-    <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"></a>
-    <a href="https://render.com/"><img src="https://img.shields.io/badge/Deployed-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render"></a>
-  </p>
-
-  <p>
-    <a href="#-deployment-guide"><b>🌐 Live Demo</b></a> •
-    <a href="#-api-reference"><b>⚡ Backend API</b></a> •
-    <a href="#-key-features"><b>✨ Features</b></a> •
-    <a href="#-quick-start"><b>🚀 Quick Start</b></a>
   </p>
 
 </div>
@@ -33,12 +24,9 @@
 - [✨ Key Features](#-key-features)
 - [🏗 System Architecture](#-system-architecture)
 - [🛠 Tech Stack](#-tech-stack)
-- [🚀 Quick Start](#-quick-start)
-- [🌐 Deployment Guide](#-deployment-guide)
-  - [Deploy Backend to Render](#1-deploy-backend-to-render)
-  - [Deploy Frontend to Vercel](#2-deploy-frontend-to-vercel)
 - [🔑 Environment Variables](#-environment-variables)
 - [⚡ API Reference](#-api-reference)
+- [🚀 Quick Start](#-quick-start)
 - [📜 License](#-license)
 
 ---
@@ -117,91 +105,6 @@ graph TD
 
 ---
 
-## 🚀 Quick Start
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/<your-username>/weather-app.git
-cd weather-app
-```
-
-### 2. Backend Setup
-```bash
-cd backend
-npm install
-```
-
-Create `.env` in `backend/`:
-```env
-PORT=5000
-MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/weather-app?retryWrites=true&w=majority
-JWT_SECRET=your_jwt_secret_key_here
-CLIENT_URL=*
-```
-
-Start backend:
-```bash
-npm run dev
-# Running on http://localhost:5000
-```
-
-### 3. Frontend Setup
-```bash
-cd ../frontend
-npm install
-```
-
-Create `.env` in `frontend/`:
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-Start frontend:
-```bash
-npm run dev
-# Running on http://localhost:5173
-```
-
----
-
-## 🌐 Deployment Guide
-
-### 1. Deploy Backend to Render
-
-1. Create a free account on [Render](https://render.com/).
-2. Click **New +** → **Web Service**.
-3. Connect your GitHub repository containing `weather-app`.
-4. Configure service settings:
-   - **Name**: `skyline-weather-backend`
-   - **Root Directory**: `backend`
-   - **Runtime**: `Node`
-   - **Build Command**: `npm install`
-   - **Start Command**: `node server.js`
-5. Add **Environment Variables** in Render settings:
-   - `PORT` = `5000`
-   - `MONGO_URI` = `your_mongodb_atlas_connection_string`
-   - `JWT_SECRET` = `your_secure_random_string`
-   - `CLIENT_URL` = `https://your-frontend.vercel.app` (or `*`)
-6. Click **Deploy Web Service**. Copy the deployed backend URL (e.g. `https://skyline-weather-backend.onrender.com`).
-
----
-
-### 2. Deploy Frontend to Vercel
-
-1. Create a free account on [Vercel](https://vercel.com/).
-2. Click **Add New...** → **Project**.
-3. Import your GitHub repository.
-4. Configure project settings:
-   - **Framework Preset**: `Vite`
-   - **Root Directory**: Click *Edit* and select `frontend`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-5. Add **Environment Variables**:
-   - `VITE_API_URL` = `https://skyline-weather-backend.onrender.com/api` (Replace with your actual Render backend URL)
-6. Click **Deploy**. Vercel will build and deploy your app instantly!
-
----
-
 ## 🔑 Environment Variables
 
 ### Backend (`backend/.env`)
@@ -237,6 +140,30 @@ npm run dev
 | `POST` | `/api/favorites` | Yes | Save a city to user's favorites |
 | `DELETE`| `/api/favorites/:id` | Yes | Remove a city from user's favorites |
 | `GET` | `/api/favorites/history` | Yes | Get logged-in user's search history |
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone & Install
+```bash
+git clone <your-repository-url>
+cd weather-app
+```
+
+### 2. Backend Setup
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 3. Frontend Setup
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
 
 ---
 

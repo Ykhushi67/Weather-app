@@ -17,21 +17,20 @@
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
-- [🚀 Live Demo](#-live-demo)
-- [✨ Key Features](#-key-features)
-- [🏗 System Architecture](#-system-architecture)
-- [🛠 Tech Stack](#-tech-stack)
-- [🔑 Environment Variables](#-environment-variables)
-- [⚡ API Reference](#-api-reference)
-- [💻 Quick Start](#-quick-start)
-
----
+- [ Key Features](#-key-features)
+- [ System Architecture](#-system-architecture)
+- [ Tech Stack](#-tech-stack)
+- [ Environment Variables](#-environment-variables)
+- [ API Reference](#-api-reference)
+- [ Quick Start](#-quick-start)
 
 ---
 
-## ✨ Key Features
+---
+
+##  Key Features
 
 ###  1. Live Weather Dashboard & Geolocation
 - **Auto Location Detection**: Instantly retrieves current local weather using browser HTML5 Geolocation.
@@ -69,7 +68,7 @@
 
 ---
 
-## 🏗 System Architecture
+##  System Architecture
 
 ```mermaid
 graph TD

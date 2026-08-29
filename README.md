@@ -7,13 +7,6 @@
     An interactive weather analytics application featuring live forecasts, air quality indices, interactive maps, city comparisons, and user search history.
   </p>
 
-  <p>
-    <a href="https://react.dev/"><img src="https://img.shields.io/badge/Frontend-React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18"></a>
-    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Bundler-Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
-    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
-    <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Framework-Express_4-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js"></a>
-    <a href="https://www.mongodb.com/atlas"><img src="https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"></a>
-  </p>
 
   <p>
     <a href="https://weather-app-pgfh.vercel.app"><b>🚀 Live Web App Demo</b></a> •

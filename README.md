@@ -7,14 +7,6 @@
     An interactive weather analytics application featuring live forecasts, air quality indices, interactive maps, city comparisons, and user search history.
   </p>
 
-  <p>
-    <a href="https://react.dev/"><img src="https://img.shields.io/badge/Frontend-React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18"></a>
-    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Bundler-Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
-    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
-    <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Framework-Express_4-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js"></a>
-    <a href="https://www.mongodb.com/atlas"><img src="https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"></a>
-  </p>
-
 </div>
 
 ---
@@ -32,25 +24,25 @@
 
 ## ✨ Key Features
 
-### 📊 1. Live Weather Dashboard & Geolocation
+###  1. Live Weather Dashboard & Geolocation
 - **Auto Location Detection**: Instantly retrieves current local weather using browser HTML5 Geolocation.
 - **City Search Autocomplete**: Search any global city or region with real-time location suggestions.
 - **Comprehensive Metrics**: Displays temperature, apparent ("feels-like") temperature, humidity, pressure, visibility, UV index, cloud cover, and wind speed/direction.
 
-### 🌡 2. Global Unit Conversion System
+###  2. Global Unit Conversion System
 - Live toggle between **Metric (°C, km/h)** and **Imperial (°F, mph)** units.
 - Instant recalculations across all dashboard metrics, forecast tiles, charts, and comparison tables.
 - Remembers user preference using `localStorage`.
 
-### 🕐 3. 24-Hour Hourly Forecast
+###  3. 24-Hour Hourly Forecast
 - Interactive horizontal tile strip showing hourly weather icons, temperatures, and rain probability.
 - Integrated **Recharts AreaChart** sparkline showing dual-gradient curves for temperature and precipitation likelihood.
 
-### 📅 4. 7-Day Future & Historical Weather
+###  4. 7-Day Future & Historical Weather
 - Multi-day forecast with daily min/max temperature gradient bars, rain chances, and sunrise/sunset times.
 - Real **7-day historical weather chart** using Open-Meteo's historical archive data.
 
-### 🌿 5. Air Quality & UV Health Dashboard
+###  5. Air Quality & UV Health Dashboard
 - Dual **US AQI** & **European AQI** status meters (Good, Moderate, Poor, Hazardous).
 - Individual pollutant breakdowns: $\text{PM}_{2.5}$, $\text{PM}_{10}$, $\text{NO}_2$, $\text{O}_3$, $\text{SO}_2$, and $\text{CO}$.
 - **UV Index Meter** with peak hours advisory and protective health guidance.
@@ -59,26 +51,26 @@
 - Powered by **Leaflet & React-Leaflet** featuring **Esri Dark Canvas**, **Esri Satellite**, and **OpenStreetMap** layers (100% free, no API key required).
 - **Click-to-Weather**: Click anywhere on the globe to reverse-geocode coordinates and inspect live weather instantly.
 
-### ⚖️ 7. Side-by-Side City Comparison Mode
+###  7. Side-by-Side City Comparison Mode
 - Search and compare two cities simultaneously with difference badges (e.g. `+5°C warmer`, `12% less humid`).
 
-### 🔒 8. User Authentication & Saved Favorites
+###  8. User Authentication & Saved Favorites
 - JWT-authenticated account registration, login, and password reset.
 - Save favorite locations and access recent search history backed by **MongoDB Atlas**.
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
-    User[📱 Client Browser / React App]
-    ViteHost[☁️ Vercel Frontend Hosting]
-    RenderBackend[⚙️ Render Express API]
-    MongoDB[(🍃 MongoDB Atlas)]
-    OpenMeteoForecast[🌤 Open-Meteo Forecast API]
-    OpenMeteoAQI[🌿 Open-Meteo Air Quality API]
-    OpenMeteoGeo[📍 Open-Meteo Geocoding API]
+    User[ Client Browser / React App]
+    ViteHost[ Vercel Frontend Hosting]
+    RenderBackend[ Render Express API]
+    MongoDB[( MongoDB Atlas)]
+    OpenMeteoForecast[ Open-Meteo Forecast API]
+    OpenMeteoAQI[ Open-Meteo Air Quality API]
+    OpenMeteoGeo[ Open-Meteo Geocoding API]
 
     User -->|Serves Web UI| ViteHost
     User -->|REST API Requests| RenderBackend
@@ -104,7 +96,7 @@ graph TD
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 ### Backend (`backend/.env`)
 | Variable | Required | Description |
@@ -121,7 +113,7 @@ graph TD
 
 ---
 
-## ⚡ API Reference
+##  API Reference
 
 | Method | Endpoint | Auth | Description |
 |---|---|---|---|
@@ -142,7 +134,7 @@ graph TD
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone & Install
 ```bash

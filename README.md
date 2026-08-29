@@ -27,7 +27,6 @@
 - [🔑 Environment Variables](#-environment-variables)
 - [⚡ API Reference](#-api-reference)
 - [🚀 Quick Start](#-quick-start)
-- [📜 License](#-license)
 
 ---
 
@@ -164,9 +163,3 @@ cd ../frontend
 npm install
 npm run dev
 ```
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**. Free to use for personal, academic, and commercial portfolios.

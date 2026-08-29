@@ -68,6 +68,15 @@
 
 ---
 
+## 📸 Screenshots & Preview
+
+<div align="center">
+
+###  Live Dashboard & Real-Time Weather
+<img src="./screenshots/Screenshot 2026-08-29 163643.png" alt="Live Weather Dashboard" width="92%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" />
+
+<br/><br/>
+
 ##  System Architecture
 
 ```mermaid

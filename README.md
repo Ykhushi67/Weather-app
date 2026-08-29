@@ -1,149 +1,245 @@
-# Skyline — Full-Stack Weather & Environmental Intelligence Platform
+<div align="center">
 
-Skyline is a full-stack MERN application engineered for real-time weather analytics, interactive atmospheric mapping, air quality tracking, and multi-city comparisons. Built using **React (Vite)**, **Node.js / Express**, **MongoDB Atlas**, and **Open-Meteo APIs** (free, open access without rate-limit friction or API keys).
+  <h1>⛅ Skyline</h1>
+  <h3>Full-Stack Weather & Environmental Intelligence Platform</h3>
+
+  <p>
+    An interactive, real-time weather analytics application featuring live forecasts, air quality indices, interactive maps, city comparisons, and user search history.
+  </p>
+
+  <p>
+    <a href="https://react.dev/"><img src="https://img.shields.io/badge/Frontend-React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18"></a>
+    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Bundler-Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
+    <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Framework-Express_4-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js"></a>
+    <a href="https://www.mongodb.com/atlas"><img src="https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"></a>
+    <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"></a>
+    <a href="https://render.com/"><img src="https://img.shields.io/badge/Deployed-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render"></a>
+  </p>
+
+  <p>
+    <a href="#-deployment-guide"><b>🌐 Live Demo</b></a> •
+    <a href="#-api-reference"><b>⚡ Backend API</b></a> •
+    <a href="#-key-features"><b>✨ Features</b></a> •
+    <a href="#-quick-start"><b>🚀 Quick Start</b></a>
+  </p>
+
+</div>
 
 ---
 
-## 🌟 Key Features
+## 📑 Table of Contents
 
-### 📊 Weather Dashboard & Analytics
-- **Live Auto-Location & Search**: Auto-detects user coordinates or searches any city worldwide with instant autocomplete geocoding.
-- **Rich Weather Metrics**: Temperature, apparent ("feels like") temperature, humidity, atmospheric pressure, visibility, cloud cover, UV index, and wind direction/speed.
-- **Unit Conversion System**: Global seamless toggle between **Metric (°C, km/h)** and **Imperial (°F, mph)** with local storage persistence.
-- **Severe Weather Alerts**: Dynamic banner warnings for extreme temperatures, rainstorms, high winds, and low visibility.
+- [✨ Key Features](#-key-features)
+- [🏗 System Architecture](#-system-architecture)
+- [🛠 Tech Stack](#-tech-stack)
+- [🚀 Quick Start](#-quick-start)
+- [🌐 Deployment Guide](#-deployment-guide)
+  - [Deploy Backend to Render](#1-deploy-backend-to-render)
+  - [Deploy Frontend to Vercel](#2-deploy-frontend-to-vercel)
+- [🔑 Environment Variables](#-environment-variables)
+- [⚡ API Reference](#-api-reference)
+- [📜 License](#-license)
 
-### 🕐 24-Hour Hourly Forecast
-- Interactive horizontal tile strip displaying hour-by-hour weather icons, temperatures, and rain chances.
-- Integrated **Recharts AreaChart** sparkline showing dual-trend curves for temperature and precipitation likelihood.
+---
 
-### 📅 7-Day Daily Forecast
-- Multi-day breakdown showing daily min/max temperature range bars, precipitation accumulation, weather condition badges, and sunrise/sunset times.
+## ✨ Key Features
 
-### 🌿 Air Quality & UV Health Dashboard
-- Dual **US AQI** and **European AQI** gauge meters with status severity indicators (Good, Moderate, Poor, Hazardous).
-- Detailed pollutant concentrations: $\text{PM}_{2.5}$, $\text{PM}_{10}$, $\text{NO}_2$, $\text{O}_3$, $\text{SO}_2$, and $\text{CO}$.
-- **UV Index Meter** with peak sun hours and protective advisory (sunscreen, sunglasses, shade recommendations).
-- Actionable health recommendations tailored to current air pollution levels.
+### 📊 1. Live Weather Dashboard & Geolocation
+- **Auto Location Detection**: Instantly retrieves current local weather using browser HTML5 Geolocation.
+- **City Search Autocomplete**: Search any global city or region with real-time location suggestions.
+- **Comprehensive Metrics**: Displays temperature, apparent ("feels-like") temperature, humidity, pressure, visibility, UV index, cloud cover, and wind speed/direction.
 
-### 🗺 Interactive Weather Map
-- Powered by **Leaflet & React-Leaflet** featuring **Esri Dark Canvas**, **Esri Satellite**, and **OpenStreetMap** tile layers (100% clean, no API keys or watermarks).
-- Pins current searched location automatically.
-- **Click-to-Weather**: Click anywhere on the map to trigger reverse geocoding and display a popup with instant local weather.
+### 🌡 2. Global Unit Conversion System
+- Live toggle between **Metric (°C, km/h)** and **Imperial (°F, mph)** units.
+- Instant recalculations across all dashboard metrics, forecast tiles, charts, and comparison tables.
+- Remembers user preference using `localStorage`.
 
-### ⚖️ Side-by-Side City Comparison Mode
-- Compare weather metrics for two cities simultaneously.
-- Stat comparison table featuring delta indicators (e.g., `+5°C warmer`, `15% less humid`).
+### 🕐 3. 24-Hour Hourly Forecast
+- Interactive horizontal tile strip showing hourly weather icons, temperatures, and rain probability.
+- Integrated **Recharts AreaChart** sparkline showing dual-gradient curves for temperature and precipitation likelihood.
 
-### 📈 7-Day Historical Weather
-- Visualizes past 7 days of historical temperature ranges using **Open-Meteo Historical Archive API**.
+### 📅 4. 7-Day Future & Historical Weather
+- Multi-day forecast with daily min/max temperature gradient bars, rain chances, and sunrise/sunset times.
+- Real **7-day historical weather chart** using Open-Meteo's historical archive data.
 
-### 🔒 User Accounts & Favorites
-- User registration and login using **JWT (JSON Web Tokens)** and bcrypt password hashing.
-- Password reset request workflow via token verification.
-- Persistent favorite cities list and search history stored in **MongoDB Atlas**.
+### 🌿 5. Air Quality & UV Health Dashboard
+- Dual **US AQI** & **European AQI** status meters (Good, Moderate, Poor, Hazardous).
+- Individual pollutant breakdowns: $\text{PM}_{2.5}$, $\text{PM}_{10}$, $\text{NO}_2$, $\text{O}_3$, $\text{SO}_2$, and $\text{CO}$.
+- **UV Index Meter** with peak hours advisory and protective health guidance.
+
+### 🗺 6. Interactive Weather Map
+- Powered by **Leaflet & React-Leaflet** featuring **Esri Dark Canvas**, **Esri Satellite**, and **OpenStreetMap** layers (100% free, no API key required).
+- **Click-to-Weather**: Click anywhere on the globe to reverse-geocode coordinates and inspect live weather instantly.
+
+### ⚖️ 7. Side-by-Side City Comparison Mode
+- Search and compare two cities simultaneously with difference badges (e.g. `+5°C warmer`, `12% less humid`).
+
+### 🔒 8. User Authentication & Saved Favorites
+- JWT-authenticated account registration, login, and password reset.
+- Save favorite locations and access recent search history backed by **MongoDB Atlas**.
+
+---
+
+## 🏗 System Architecture
+
+```mermaid
+graph TD
+    User[📱 Client Browser / React App]
+    ViteHost[☁️ Vercel Frontend Hosting]
+    RenderBackend[⚙️ Render Express API]
+    MongoDB[(🍃 MongoDB Atlas)]
+    OpenMeteoForecast[🌤 Open-Meteo Forecast API]
+    OpenMeteoAQI[🌿 Open-Meteo Air Quality API]
+    OpenMeteoGeo[📍 Open-Meteo Geocoding API]
+
+    User -->|Serves Web UI| ViteHost
+    User -->|REST API Requests| RenderBackend
+    RenderBackend -->|Auth, Favorites, History| MongoDB
+    RenderBackend -->|Fetch Live/Hourly/Daily| OpenMeteoForecast
+    RenderBackend -->|Fetch PM2.5, AQI, UV| OpenMeteoAQI
+    RenderBackend -->|City Search & Reverse Geocode| OpenMeteoGeo
+```
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React 18, Vite, Recharts, Leaflet, React-Leaflet, Lucide React, Vanilla CSS (Glassmorphism design system)
-- **Backend**: Node.js, Express.js, Mongoose / MongoDB Atlas, JWT, Node-Fetch, Dotenv
-- **Data Providers**: Open-Meteo (Forecast API, Air Quality API, Geocoding API, Historical Archive API)
+| Domain | Technology | Description |
+|---|---|---|
+| **Frontend** | React 18, Vite 5 | SPA UI framework & fast builder |
+| **Styling** | Vanilla CSS Glassmorphism | Custom CSS tokens, backdrop filters, dynamic gradients |
+| **Data Viz & Maps** | Recharts, Leaflet, React-Leaflet | Responsive area charts & interactive maps |
+| **Backend** | Node.js, Express.js | REST API server with routing middleware |
+| **Database** | MongoDB Atlas, Mongoose | Cloud NoSQL database for users & favorites |
+| **Security** | JWT, Bcrypt | Token authentication & password hashing |
+| **APIs** | Open-Meteo APIs | Free weather, AQI, archive, & geocoding endpoints |
 
 ---
 
-## 📂 Project Structure
+## 🚀 Quick Start
 
-```
-weather-app/
-├── backend/
-│   ├── config/          # Database connection setup
-│   ├── controllers/     # Express logic for weather, auth, & favorites
-│   ├── middleware/      # Auth JWT verification middleware
-│   ├── models/          # Mongoose schemas (User, Favorite, SearchHistory)
-│   ├── routes/          # API route definitions
-│   ├── server.js        # Express application entry point
-│   └── .env.example     # Backend environment template
-└── frontend/
-    ├── src/
-    │   ├── components/  # WeatherCard, HourlyForecast, DailyForecast, AirQualityCard, WeatherMap, CityCompare, etc.
-    │   ├── context/     # AuthContext & UnitContext (°C/°F)
-    │   ├── api.js       # Centralized API service layer
-    │   ├── App.jsx      # Core view router & layout controller
-    │   └── App.css      # Custom Glassmorphic design tokens & styles
-    └── .env.example     # Frontend environment template
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/weather-app.git
+cd weather-app
 ```
 
----
-
-## ⚡ Quick Start & Setup
-
-### Prerequisites
-- Node.js (v18+)
-- MongoDB Atlas database URI (optional for weather features, required for Auth & Favorites)
-
-### 1. Backend Setup
-
+### 2. Backend Setup
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file in `backend/`:
+Create `.env` in `backend/`:
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/weather-app?retryWrites=true&w=majority
-JWT_SECRET=your_jwt_secret_key
+MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/weather-app?retryWrites=true&w=majority
+JWT_SECRET=your_jwt_secret_key_here
 CLIENT_URL=*
 ```
 
-Start the backend dev server:
+Start backend:
 ```bash
 npm run dev
-# Server running on http://localhost:5000
+# Running on http://localhost:5000
 ```
 
-### 2. Frontend Setup
-
+### 3. Frontend Setup
 ```bash
-cd frontend
+cd ../frontend
 npm install
 ```
 
-Create a `.env` file in `frontend/`:
+Create `.env` in `frontend/`:
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
-Start the frontend dev server:
+Start frontend:
 ```bash
 npm run dev
-# App running on http://localhost:5173 (or http://localhost:5174)
+# Running on http://localhost:5173
 ```
 
 ---
 
-## 🛰 API Reference
+## 🌐 Deployment Guide
 
-| Method | Route | Auth Required | Description |
-|---|---|---|---|
-| `POST` | `/api/auth/signup` | No | Register a new user account |
-| `POST` | `/api/auth/login` | No | Log in and receive JWT token |
-| `POST` | `/api/auth/forgot-password` | No | Request password reset email/token |
-| `POST` | `/api/auth/reset-password` | No | Reset password with valid token |
-| `GET` | `/api/weather/geocode` | No | Search city names to coordinates |
-| `GET` | `/api/weather/reverse-geocode` | No | Convert lat/lon coordinates to city name |
-| `GET` | `/api/weather/current` | Optional | Get current weather, 24h hourly, and 7-day forecast |
-| `GET` | `/api/weather/history` | No | Get past 7 days historical weather data |
-| `GET` | `/api/weather/air-quality` | No | Get AQI pollutants & UV index data |
-| `GET` | `/api/weather/compare` | No | Compare metrics for multiple cities |
-| `GET` | `/api/favorites` | Yes | Get user's saved favorite cities |
-| `POST` | `/api/favorites` | Yes | Add a new favorite city |
-| `DELETE`| `/api/favorites/:id` | Yes | Remove a favorite city |
-| `GET` | `/api/favorites/history` | Yes | Get user's recent search history |
+### 1. Deploy Backend to Render
+
+1. Create a free account on [Render](https://render.com/).
+2. Click **New +** → **Web Service**.
+3. Connect your GitHub repository containing `weather-app`.
+4. Configure service settings:
+   - **Name**: `skyline-weather-backend`
+   - **Root Directory**: `backend`
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `node server.js`
+5. Add **Environment Variables** in Render settings:
+   - `PORT` = `5000`
+   - `MONGO_URI` = `your_mongodb_atlas_connection_string`
+   - `JWT_SECRET` = `your_secure_random_string`
+   - `CLIENT_URL` = `https://your-frontend.vercel.app` (or `*`)
+6. Click **Deploy Web Service**. Copy the deployed backend URL (e.g. `https://skyline-weather-backend.onrender.com`).
 
 ---
 
-## 📄 License
+### 2. Deploy Frontend to Vercel
 
-MIT License — free for personal and educational use.
+1. Create a free account on [Vercel](https://vercel.com/).
+2. Click **Add New...** → **Project**.
+3. Import your GitHub repository.
+4. Configure project settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: Click *Edit* and select `frontend`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Add **Environment Variables**:
+   - `VITE_API_URL` = `https://skyline-weather-backend.onrender.com/api` (Replace with your actual Render backend URL)
+6. Click **Deploy**. Vercel will build and deploy your app instantly!
+
+---
+
+## 🔑 Environment Variables
+
+### Backend (`backend/.env`)
+| Variable | Required | Description |
+|---|---|---|
+| `PORT` | Yes | Express server port (default: `5000`) |
+| `MONGO_URI` | Yes | MongoDB Atlas connection string |
+| `JWT_SECRET` | Yes | Secret key for signing authentication tokens |
+| `CLIENT_URL` | Yes | Allowed frontend origin for CORS (`*` or Vercel URL) |
+
+### Frontend (`frontend/.env`)
+| Variable | Required | Description |
+|---|---|---|
+| `VITE_API_URL` | Yes | Backend REST API base URL (e.g. `http://localhost:5000/api`) |
+
+---
+
+## ⚡ API Reference
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| `POST` | `/api/auth/signup` | No | Register new user account |
+| `POST` | `/api/auth/login` | No | Authenticate user & receive JWT token |
+| `POST` | `/api/auth/forgot-password` | No | Request password reset token |
+| `POST` | `/api/auth/reset-password` | No | Reset password using valid token |
+| `GET` | `/api/weather/geocode` | No | Search city names to coordinates |
+| `GET` | `/api/weather/reverse-geocode` | No | Reverse geocode lat/lon to location name |
+| `GET` | `/api/weather/current` | Optional | Get current weather, 24h hourly, and 7-day forecast |
+| `GET` | `/api/weather/history` | No | Get past 7 days historical weather data |
+| `GET` | `/api/weather/air-quality` | No | Get AQI pollutant concentrations & UV index |
+| `GET` | `/api/weather/compare` | No | Compare weather metrics for multiple cities |
+| `GET` | `/api/favorites` | Yes | Get logged-in user's saved favorite cities |
+| `POST` | `/api/favorites` | Yes | Save a city to user's favorites |
+| `DELETE`| `/api/favorites/:id` | Yes | Remove a city from user's favorites |
+| `GET` | `/api/favorites/history` | Yes | Get logged-in user's search history |
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. Free to use for personal, academic, and commercial portfolios.

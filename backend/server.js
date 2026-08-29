@@ -14,9 +14,31 @@ connectDB();
 
 const app = express();
 
+const getCorsOrigin = () => {
+  const clientUrl = process.env.CLIENT_URL;
+  if (!clientUrl || clientUrl.trim() === "*") return "*";
+  const trimmed = clientUrl.trim();
+  if (!trimmed.startsWith("http://") && !trimmed.startsWith("https://")) {
+    return `https://${trimmed}`;
+  }
+  return trimmed;
+};
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "*",
+    origin: (origin, callback) => {
+      const allowedOrigin = getCorsOrigin();
+      if (!origin || allowedOrigin === "*") return callback(null, true);
+      if (
+        origin === allowedOrigin ||
+        origin.endsWith(".vercel.app") ||
+        origin.includes("localhost")
+      ) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
+    credentials: true,
   })
 );
 app.use(express.json());
